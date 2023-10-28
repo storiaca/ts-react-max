@@ -5,3 +5,8 @@ userName = "Aca";
 let userAge = 34; // number type
 
 let isValid = true; // boolean type
+
+/* Union types */
+let userId: string | number = "123abc";
+
+userId = 123;
