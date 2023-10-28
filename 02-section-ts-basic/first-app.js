@@ -15,3 +15,8 @@ user = {
     isAdmin: true,
     id: "abc", // 123
 };
+/* Array types */
+// let hobbies: Array<string>;
+var hobbies; // number[], boolean[]
+// {name: string}; age: number}[]
+hobbies = ["Sports", "Cooking", "Reading"];
