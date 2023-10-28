@@ -1,6 +1,7 @@
-// let userName = "Max";
-// username = 43; // this won't work in ts file type
-
-let userName: string;
+let userName = "Max"; // string type
 //userName = 34;
-userName = "Max";
+userName = "Aca";
+
+let userAge = 34; // number type
+
+let isValid = true; // boolean type
