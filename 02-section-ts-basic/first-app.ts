@@ -81,3 +81,38 @@ function login(credentials: Credentials) {}
 
 // login(creds)
 login(new AuthCredentials());
+
+/* Merging Types */
+// type Admin = {
+//   permissions: string[];
+// };
+
+// type AppUser = {
+//   userName: string;
+// };
+
+// type AppAdmin = Admin & AppUser;
+
+// let admin: AppAdmin;
+
+// admin = {
+//   permissions: ["login"],
+//   userName: "Max",
+// };
+
+interface Admin {
+  permissions: string[];
+}
+
+interface AppUser {
+  userName: string;
+}
+
+interface AppAdmin extends Admin, AppUser {}
+
+let admin: AppAdmin;
+
+admin = {
+  permissions: ["login"],
+  userName: "Max",
+};

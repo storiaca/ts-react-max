@@ -43,3 +43,8 @@ var AuthCredentials = /** @class */ (function () {
 function login(credentials) { }
 // login(creds)
 login(new AuthCredentials());
+var admin;
+admin = {
+    permissions: ["login"],
+    userName: "Max",
+};
