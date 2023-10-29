@@ -1,3 +1,14 @@
+var __assign = (this && this.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
 var userName = "Max"; // string type
 //userName = 34;
 userName = "Aca";
@@ -56,3 +67,25 @@ function performAction(action, role) {
         // ...
     }
 }
+/* Generic Types */
+var roles;
+roles = ["admin", "editor"];
+var textStorage = {
+    storage: [],
+    add: function (data) {
+        this.storage.push(data);
+    },
+};
+var userStorage = {
+    storage: [],
+    add: function (user) { },
+};
+function merge(a, b) {
+    return __assign(__assign({}, a), b);
+}
+// const newUser = merge<{ name: string }, { age: number }>(
+//   { name: "Max" },
+//   { age: 28 }
+// );
+var newUser = merge({ name: "Max" }, { age: 28 });
+newUser.name;

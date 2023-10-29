@@ -118,7 +118,7 @@ admin = {
   userName: "Max",
 };
 
-/* Literal Types and Type Guards*/
+/* Literal Types and Type Guards */
 
 type Role = "admin" | "user" | "editor";
 let role: Role; // 'admin', 'user', 'editor'
@@ -131,3 +131,39 @@ function performAction(action: string | number, role: Role) {
     // ...
   }
 }
+
+/* Generic Types */
+let roles: Array<Role>;
+roles = ["admin", "editor"];
+
+type DataStorage<T> = {
+  storage: T[];
+  add: (data: T) => void;
+};
+
+const textStorage: DataStorage<string> = {
+  storage: [],
+  add(data) {
+    this.storage.push(data);
+  },
+};
+
+const userStorage: DataStorage<User> = {
+  storage: [],
+  add(user) {},
+};
+
+function merge<T, U>(a: T, b: U) {
+  return {
+    ...a,
+    ...b,
+  };
+}
+
+// const newUser = merge<{ name: string }, { age: number }>(
+//   { name: "Max" },
+//   { age: 28 }
+// );
+
+const newUser = merge({ name: "Max" }, { age: 28 });
+newUser.name;
