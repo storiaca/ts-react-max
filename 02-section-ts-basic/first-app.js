@@ -26,3 +26,7 @@ function add(a, b) {
     console.log(result);
     return result;
 }
+function calculate(a, b, calcFn) {
+    calcFn(a, b);
+}
+calculate(2, 5, add);

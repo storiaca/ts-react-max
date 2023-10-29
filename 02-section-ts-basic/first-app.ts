@@ -42,3 +42,13 @@ function add(a: number, b: number) {
   console.log(result);
   return result;
 }
+
+function calculate(
+  a: number,
+  b: number,
+  calcFn: (a: number, b: number) => number
+) {
+  calcFn(a, b);
+}
+
+calculate(2, 5, add);
