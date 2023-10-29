@@ -83,6 +83,7 @@ function login(credentials: Credentials) {}
 login(new AuthCredentials());
 
 /* Merging Types */
+
 // type Admin = {
 //   permissions: string[];
 // };
@@ -116,3 +117,10 @@ admin = {
   permissions: ["login"],
   userName: "Max",
 };
+
+/* Literal Types */
+
+let role: "admin" | "user" | "editor"; // 'admin', 'user', 'editor'
+
+role = "admin";
+// role = "abc"; // error

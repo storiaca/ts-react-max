@@ -48,3 +48,7 @@ admin = {
     permissions: ["login"],
     userName: "Max",
 };
+/* Literal Types */
+var role; // 'admin', 'user', 'editor'
+role = "admin";
+// role = "abc"; // error
