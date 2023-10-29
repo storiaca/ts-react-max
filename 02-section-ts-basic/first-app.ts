@@ -52,3 +52,17 @@ function calculate(a: number, b: number, calcFn: AddFn) {
 }
 
 calculate(2, 5, add);
+
+/* Interface */
+
+interface Credentials {
+  password: string;
+  email: string;
+}
+
+let creds: Credentials;
+
+creds = {
+  password: "abc",
+  email: "test@mail.com",
+};
