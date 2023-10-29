@@ -7,18 +7,21 @@ let userAge = 34; // number type
 let isValid = true; // boolean type
 
 /* Union types */
-let userId: string | number = "123abc";
+type StringOrNumber = string | number;
+let userId: StringOrNumber = "123abc";
 
 userId = 123;
 
 /* Object types */
 // let user: object; // not best practice
-let user: {
+
+type User = {
   name: string;
   age: number;
   isAdmin: boolean;
   id: string | number;
 };
+let user: User;
 
 user = {
   name: "Max",
@@ -43,11 +46,8 @@ function add(a: number, b: number) {
   return result;
 }
 
-function calculate(
-  a: number,
-  b: number,
-  calcFn: (a: number, b: number) => number
-) {
+type AddFn = (a: number, b: number) => number;
+function calculate(a: number, b: number, calcFn: AddFn) {
   calcFn(a, b);
 }
 
