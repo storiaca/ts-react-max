@@ -20,3 +20,9 @@ user = {
 var hobbies; // number[], boolean[]
 // {name: string}; age: number}[]
 hobbies = ["Sports", "Cooking", "Reading"];
+/* Function types */
+function add(a, b) {
+    var result = a + b;
+    console.log(result);
+    return result;
+}
