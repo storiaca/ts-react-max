@@ -118,9 +118,16 @@ admin = {
   userName: "Max",
 };
 
-/* Literal Types */
+/* Literal Types and Type Guards*/
 
-let role: "admin" | "user" | "editor"; // 'admin', 'user', 'editor'
+type Role = "admin" | "user" | "editor";
+let role: Role; // 'admin', 'user', 'editor'
 
 role = "admin";
 // role = "abc"; // error
+
+function performAction(action: string | number, role: Role) {
+  if (role === "admin" && typeof action === "string") {
+    // ...
+  }
+}

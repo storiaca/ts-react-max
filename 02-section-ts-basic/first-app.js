@@ -48,7 +48,11 @@ admin = {
     permissions: ["login"],
     userName: "Max",
 };
-/* Literal Types */
 var role; // 'admin', 'user', 'editor'
 role = "admin";
 // role = "abc"; // error
+function performAction(action, role) {
+    if (role === "admin" && typeof action === "string") {
+        // ...
+    }
+}
