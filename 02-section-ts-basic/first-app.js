@@ -27,8 +27,19 @@ function calculate(a, b, calcFn) {
     calcFn(a, b);
 }
 calculate(2, 5, add);
+// interface Credentials {
+//   mode: string;
+// }
 var creds;
 creds = {
     password: "abc",
     email: "test@mail.com",
 };
+var AuthCredentials = /** @class */ (function () {
+    function AuthCredentials() {
+    }
+    return AuthCredentials;
+}());
+function login(credentials) { }
+// login(creds)
+login(new AuthCredentials());
