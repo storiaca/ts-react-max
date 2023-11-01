@@ -1,20 +1,24 @@
-import { type FormEvent } from "react";
+import { useRef, type FormEvent } from "react";
 
 const NewGoal = () => {
+  const goal = useRef<HTMLInputElement>(null);
+  const summary = useRef<HTMLInputElement>(null);
+
   function handleSumbit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    new FormData(event.currentTarget);
+    const enteredGoal = goal.current!.value;
+    const enteredSummary = summary.current!.value;
   }
   return (
     <form onSubmit={handleSumbit}>
       <p>
         <label htmlFor="goal">Your goal</label>
-        <input id="goal" type="text" name="goal" />
+        <input id="goal" type="text" ref={goal} />
       </p>
       <p>
         <label htmlFor="summary">Short summary</label>
-        <input id="summary" type="text" name="summary" />
+        <input id="summary" type="text" ref={summary} />
       </p>
       <p>
         <button>Add goal</button>
