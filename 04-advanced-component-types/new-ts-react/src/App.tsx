@@ -3,8 +3,8 @@ function App() {
   return (
     <main>
       Let's get started!
-      <Input id="name" label="Your name" />
-      <Input id="age" label="Your age" />
+      <Input id="name" label="Your name" type="text" />
+      <Input id="age" label="Your age" type="number" />
     </main>
   );
 }
