@@ -5,7 +5,7 @@ import {
 } from "react";
 
 type ContainerProps<T extends ElementType> = {
-  as: T;
+  as?: T;
   children: ReactNode;
 } & ComponentPropsWithoutRef<T>;
 
