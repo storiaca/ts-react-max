@@ -1,6 +1,6 @@
 import { createContext, ReactNode, useContext, useReducer } from "react";
 
-type Timer = {
+export type Timer = {
   name: string;
   duration: number;
 };
@@ -23,7 +23,7 @@ type TimersContextValue = TimersState & {
 
 const TimersContext = createContext<TimersContextValue | null>(null);
 
-export function useTimerContext() {
+export function useTimersContext() {
   const timersCtx = useContext(TimersContext);
 
   if (timersCtx === null) {
