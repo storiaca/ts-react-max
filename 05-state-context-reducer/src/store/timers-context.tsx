@@ -12,8 +12,8 @@ type TimersState = {
 
 const initialState: TimersState = {
   isRunning: true,
-  timers: []
-}
+  timers: [],
+};
 
 type TimersContextValue = TimersState & {
   addTimer: (timerData: Timer) => void;
@@ -36,21 +36,28 @@ export function useTimerContext() {
 type TimersContextProviderProps = {
   children: ReactNode;
 };
+
+type Action = {
+  type: "ADD_TIMER" | "START_TIMERS" | "STOP_TIMERS";
+};
+
+function timersReducer(state: TimersState, action: Action): TimersState {}
+
 export default function TimersContextProvider({
   children,
 }: TimersContextProviderProps) {
-  useReducer(reducer, initialState);
+  const [timersState, dispatch] = useReducer(timersReducer, initialState);
   const ctx: TimersContextValue = {
     timers: [],
     isRunning: false,
     addTimer(timerData) {
-      // TODO
+      dispatch({ type: "ADD_TIMER" });
     },
     startTimers() {
-      // TODO
+      dispatch({ type: "START_TIMERS" });
     },
     stopTimers() {
-      // TODO
+      dispatch({ type: "STOP_TIMERS" });
     },
   };
   return (
