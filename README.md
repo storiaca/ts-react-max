@@ -8,3 +8,10 @@ https://github.com/academind/react-typescript-course-resources
 
 https://codesandbox.io/p/sandbox/typescript-basics-start-wgwpqm
 
+## JSON Placeholder
+
+https://jsonplaceholder.typicode.com/
+
+## Zod
+
+https://zod.dev/
